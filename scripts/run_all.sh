@@ -12,10 +12,13 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPS="${REPS:-5}"
 JOBS="${JOBS:-4}"
 
-# Build ClangBuildAnalyzer if it is not already present, and make sure a
-# Clang with -ftime-trace is available (the base image has no compiler tools).
+# Make sure a Clang with -ftime-trace is available (the base image has no
+# compiler tools) and install ClangBuildAnalyzer locally into
+# .tools/ClangBuildAnalyzer if it is not already present.
 eval "$("$ROOT/scripts/setup_env.sh")"
 eval "$("$ROOT/scripts/bootstrap_cba.sh")"
+echo "Using CBA: $CBA"
+echo "Using CXX: $CXX"
 
 REPS="$REPS" JOBS="$JOBS" bash "$ROOT/scripts/measure.sh" baseline "$REPS"
 REPS="$REPS" JOBS="$JOBS" bash "$ROOT/scripts/measure.sh" pch "$REPS"

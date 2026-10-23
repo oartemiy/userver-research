@@ -16,7 +16,7 @@ BUILD_DIR="${BUILD_DIR:-$ROOT/build-$MODE}"
 RESULTS="${RESULTS:-$ROOT/results/$MODE}"
 CC="${CC:-$(command -v clang-18 || command -v clang || true)}"
 CXX="${CXX:-$(command -v clang++-18 || command -v clang++ || true)}"
-CBA="${CBA:-/root/tools/ClangBuildAnalyzer/build/ClangBuildAnalyzer}"
+CBA="${CBA:-$ROOT/.tools/ClangBuildAnalyzer/build/ClangBuildAnalyzer}"
 
 if [[ -z "$CC" || -z "$CXX" ]]; then
     echo "clang not found; run scripts/setup_env.sh first" >&2
@@ -30,8 +30,11 @@ case "$MODE" in
 esac
 
 if [[ ! -x "$CBA" ]]; then
-    echo "ClangBuildAnalyzer not found at $CBA (set CBA=...)" >&2
-    exit 3
+    echo "ClangBuildAnalyzer not found at $CBA; installing it locally..." >&2
+    if ! eval "$("$ROOT/scripts/bootstrap_cba.sh")"; then
+        echo "could not install ClangBuildAnalyzer" >&2
+        exit 3
+    fi
 fi
 
 cd "$ROOT"

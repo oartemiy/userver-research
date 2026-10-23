@@ -36,30 +36,64 @@ The repo contains a reproducible experiment that measures where the build time
 of this service goes and checks one optimization hypothesis (precompiled
 headers). See [REPORT.md](REPORT.md) for the results.
 
-One command in the pinned assignment environment (4 CPUs, 8 GiB, x86-64 image):
+### Quick start (recommended: Docker)
+
+From the repository root:
 
 ```bash
-scripts/run_in_docker.sh          # or, inside the container: scripts/run_all.sh
+scripts/run_in_docker.sh
 ```
 
-What it does:
+This runs the whole experiment in the pinned assignment image with the required
+limits: 4 CPUs, 8 GiB RAM, x86-64 Ubuntu 22.04. The first run needs network
+access: it installs `clang-18` if needed and builds ClangBuildAnalyzer locally
+into `.tools/ClangBuildAnalyzer`. Later runs reuse both.
 
-1. Installs Clang 18 if the image does not have it (`scripts/setup_env.sh`; the
+For a quick smoke test (one build per mode instead of five):
+
+```bash
+REPS=1 scripts/run_in_docker.sh
+```
+
+### Quick start (already inside the image)
+
+```bash
+REPS=5 JOBS=4 scripts/run_all.sh
+```
+
+`scripts/run_all.sh` is self-contained: it prepares Clang, installs
+ClangBuildAnalyzer into `.tools/ClangBuildAnalyzer` if it is missing, runs the
+baseline and PCH measurements, and generates the comparison.
+
+### What the scripts do
+
+1. Install Clang 18 if the image does not have it (`scripts/setup_env.sh`; the
    base image ships without a compiler with `-ftime-trace`).
-2. Locates ClangBuildAnalyzer, or builds it to `~/tools/ClangBuildAnalyzer`
-   (`scripts/bootstrap_cba.sh`).
-3. For every mode (`baseline`, `pch`) and every repetition: removes the build
-   directory, configures a Release build with Clang 18 and `-ftime-trace`,
-   runs `ClangBuildAnalyzer --start`, builds `research` with `ninja -j4`,
-   saves `--stop`/`--analyze` output and the wall clock.
-4. Produces `results/comparison.md`, `results/summary.json` and per-run raw
+2. Locate ClangBuildAnalyzer, or clone and build it into
+   `.tools/ClangBuildAnalyzer` (`scripts/bootstrap_cba.sh`). The analyzer is
+   local to the checkout, so no system-wide installation is required.
+3. For every mode (`baseline`, `pch`) and every repetition: remove the build
+   directory, configure a Release build with Clang 18 and `-ftime-trace`,
+   run `ClangBuildAnalyzer --start`, build `research` with `ninja -j4`, save
+   `--stop`/`--analyze` output and the wall clock.
+4. Produce `results/comparison.md`, `results/summary.json` and per-run raw
    reports `results/<mode>/cba-report-N.txt`.
 
-The first run needs network access to install `clang-18` and clone
-ClangBuildAnalyzer; later runs reuse both.
-
 Useful environment variables: `REPS` (default 5), `JOBS` (default 4),
-`CBA=/path/to/ClangBuildAnalyzer`.
+`CBA=/path/to/ClangBuildAnalyzer` (use an existing binary instead of the local
+build), `CBA_SRC=/path/to/ClangBuildAnalyzer` (use another source tree).
+
+### Where to look after the run
+
+```bash
+cat results/comparison.md     # medians: frontend/backend, phases, per-TU
+cat results/summary.json      # the same data for scripts
+head -n 8 cba-report.txt      # canonical full CBA output, baseline
+head -n 8 cba-report-pch.txt  # canonical full CBA output, PCH
+```
+
+The canonical root `cba-report*.txt` files are single runs; all numbers in
+`REPORT.md` are medians of five clean builds.
 
 The PCH hypothesis is enabled by `-DRESEARCH_USE_PCH=ON`; the precompiled
 header sets are `src/pch_userver.hpp` and `src/pch_proto.hpp`.
