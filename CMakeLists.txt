@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.12...3.31)
 project(research CXX)
 
+option(
+    RESEARCH_USE_PCH
+    "Precompile common userver/protobuf headers (build-time experiment)"
+    OFF
+)
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(DownloadUserver)
 
@@ -58,6 +64,15 @@ add_google_tests(${PROJECT_NAME}_unittest)
 add_executable(${PROJECT_NAME}_benchmark src/greeting_benchmark.cpp)
 target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME}_objs userver::ubench)
 add_google_benchmark_tests(${PROJECT_NAME}_benchmark)
+
+# Build-time experiment (step 4 of the assignment): precompiled headers with
+# the headers that are re-parsed in every translation unit.
+# Enabled only via -DRESEARCH_USE_PCH=ON, see scripts/measure.sh.
+if(RESEARCH_USE_PCH)
+    target_precompile_headers(${PROJECT_NAME}_objs PRIVATE src/pch_userver.hpp)
+    target_precompile_headers(${PROJECT_NAME} PRIVATE src/pch_userver.hpp)
+    target_precompile_headers(${PROJECT_NAME}_proto PRIVATE src/pch_proto.hpp)
+endif()
 
 # Functional testing
 userver_testsuite_add_simple()

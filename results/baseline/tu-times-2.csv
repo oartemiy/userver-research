@@ -1,0 +1,11 @@
+tu,frontend_ms,backend_ms
+CMakeFiles/research.dir/src/main.cpp.json,6562.23,1757.486
+CMakeFiles/research_proto.dir/proto/handlers/hello_client.usrv.pb.cpp.json,5110.209,3157.699
+CMakeFiles/research_proto.dir/proto/handlers/hello_service.usrv.pb.cpp.json,4930.605,2807.422
+CMakeFiles/research_objs.dir/src/hello_postgres.cpp.json,3962.003,1352.864
+CMakeFiles/research_objs.dir/src/hello_grpc.cpp.json,3789.334,1255.156
+CMakeFiles/research_proto.dir/proto/handlers/hello.grpc.pb.cc.json,3687.508,2392.946
+CMakeFiles/research_objs.dir/src/hello_mongo.cpp.json,3143.328,939.058
+CMakeFiles/research_objs.dir/src/hello.cpp.json,2657.036,797.828
+CMakeFiles/research_proto.dir/proto/handlers/hello.pb.cc.json,2287.932,1082.423
+CMakeFiles/research_objs.dir/src/greeting.cpp.json,1765.01,745.072

@@ -30,6 +30,40 @@ can also be `debug-custom`, `release-custom`.
 * `make docker-clean-data` - stop docker containers
 
 
+## Build-time profiling (test assignment)
+
+The repo contains a reproducible experiment that measures where the build time
+of this service goes and checks one optimization hypothesis (precompiled
+headers). See [REPORT.md](REPORT.md) for the results.
+
+One command in the pinned assignment environment (4 CPUs, 8 GiB, x86-64 image):
+
+```bash
+scripts/run_in_docker.sh          # or, inside the container: scripts/run_all.sh
+```
+
+What it does:
+
+1. Locates ClangBuildAnalyzer, or builds it to `~/tools/ClangBuildAnalyzer`
+   (`scripts/bootstrap_cba.sh`).
+2. For every mode (`baseline`, `pch`) and every repetition: removes the build
+   directory, configures a Release build with Clang 18 and `-ftime-trace`,
+   runs `ClangBuildAnalyzer --start`, builds `research` with `ninja -j4`,
+   saves `--stop`/`--analyze` output and the wall clock.
+3. Produces `results/comparison.md`, `results/summary.json` and per-run raw
+   reports `results/<mode>/cba-report-N.txt`.
+
+Useful environment variables: `REPS` (default 5), `JOBS` (default 4),
+`CBA=/path/to/ClangBuildAnalyzer`.
+
+The PCH hypothesis is enabled by `-DRESEARCH_USE_PCH=ON`; the precompiled
+header sets are `src/pch_userver.hpp` and `src/pch_proto.hpp`.
+
+Note: the image is x86-64. On Apple Silicon it runs under emulation, so
+absolute times are distorted; baseline and PCH are measured under the same
+conditions, so the relative deltas remain comparable (see REPORT.md).
+
+
 ## License
 
 The original template is distributed under the [Apache-2.0 License](https://github.com/userver-framework/userver/blob/develop/LICENSE)

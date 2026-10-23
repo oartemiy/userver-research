@@ -1,0 +1,5 @@
+mode=pch reps=5 jobs=4
+cxx=Ubuntu clang version 18.1.8 (++20240731024944+3b5b5c1ec4a3-1~exp1~20240731145000.144)
+cmake=cmake version 4.4.4
+nproc=4
+Linux 83220ddc34ae 7.0.14-linuxkit #1 SMP PREEMPT Fri Oct 16 11:55:50 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
