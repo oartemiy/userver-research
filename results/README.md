@@ -19,8 +19,10 @@ Medians of 5 clean builds per mode. Environment: Ubuntu 22.04 userver image
 
 Canonical summaries (medians):
 
-* baseline: frontend 37.9 s, backend 16.4 s, CPU 54.3 s, wall 29.9 s, link 11.9 s
+* baseline: frontend 37.9 s (69.8% CPU), backend 16.4 s (30.2%), CPU 54.3 s,
+  wall 29.9 s, link 11.9 s (39.7% wall)
 * PCH: frontend 27.5 s, backend 16.3 s, CPU 43.8 s, wall 29.5 s, link 11.9 s
+  (frontend −27.4%, CPU −19.3%, wall −1.6%)
 
 The canonical root `cba-report*.txt` files are single runs (not medians); use
 `comparison.md` for the aggregated numbers.
