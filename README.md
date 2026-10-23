@@ -44,14 +44,19 @@ scripts/run_in_docker.sh          # or, inside the container: scripts/run_all.sh
 
 What it does:
 
-1. Locates ClangBuildAnalyzer, or builds it to `~/tools/ClangBuildAnalyzer`
+1. Installs Clang 18 if the image does not have it (`scripts/setup_env.sh`; the
+   base image ships without a compiler with `-ftime-trace`).
+2. Locates ClangBuildAnalyzer, or builds it to `~/tools/ClangBuildAnalyzer`
    (`scripts/bootstrap_cba.sh`).
-2. For every mode (`baseline`, `pch`) and every repetition: removes the build
+3. For every mode (`baseline`, `pch`) and every repetition: removes the build
    directory, configures a Release build with Clang 18 and `-ftime-trace`,
    runs `ClangBuildAnalyzer --start`, builds `research` with `ninja -j4`,
    saves `--stop`/`--analyze` output and the wall clock.
-3. Produces `results/comparison.md`, `results/summary.json` and per-run raw
+4. Produces `results/comparison.md`, `results/summary.json` and per-run raw
    reports `results/<mode>/cba-report-N.txt`.
+
+The first run needs network access to install `clang-18` and clone
+ClangBuildAnalyzer; later runs reuse both.
 
 Useful environment variables: `REPS` (default 5), `JOBS` (default 4),
 `CBA=/path/to/ClangBuildAnalyzer`.

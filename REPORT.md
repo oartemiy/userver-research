@@ -14,7 +14,8 @@ Docker-образа из задания) или `scripts/run_in_docker.sh` с х
 * Каждый замер — чистая сборка: удаление build-каталога, configure Release с `-ftime-trace`,
   `ClangBuildAnalyzer --start`, `ninja -j4 research`, `--stop` и `--analyze`. По 5 повторов на
   режим, ниже медианы. Сырые отчёты: `results/<mode>/cba-report-N.txt`, сводка —
-  `results/comparison.md`.
+  `results/comparison.md`. Полные канонические выводы CBA продублированы в корне:
+  `cba-report.txt` (baseline) и `cba-report-pch.txt` (PCH).
 * Сборка изначально падала на линковке (`unable to initialize decompress status for section
   .debug_loclists`). Причина: userver включает `-gz=zstd` (Clang 18 это умеет), а GNU ld 2.38
   собран без zstd и не читает сжатые debug-секции. Обход — `-DUSERVER_DEBUG_INFO_COMPRESSION=none`;

@@ -14,9 +14,14 @@ JOBS="${JOBS:-4}"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR="${BUILD_DIR:-$ROOT/build-$MODE}"
 RESULTS="${RESULTS:-$ROOT/results/$MODE}"
-CC="${CC:-/usr/bin/clang-18}"
-CXX="${CXX:-/usr/bin/clang++-18}"
+CC="${CC:-$(command -v clang-18 || command -v clang || true)}"
+CXX="${CXX:-$(command -v clang++-18 || command -v clang++ || true)}"
 CBA="${CBA:-/root/tools/ClangBuildAnalyzer/build/ClangBuildAnalyzer}"
+
+if [[ -z "$CC" || -z "$CXX" ]]; then
+    echo "clang not found; run scripts/setup_env.sh first" >&2
+    exit 3
+fi
 
 case "$MODE" in
     baseline) PCH_FLAG=-DRESEARCH_USE_PCH=OFF ;;
