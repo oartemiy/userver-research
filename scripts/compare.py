@@ -16,7 +16,7 @@ import re
 import statistics
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RESULTS = os.path.join(ROOT, "results")
+RESULTS = os.environ.get("RESULTS_ROOT", os.path.join(ROOT, "results"))
 MODES = ["baseline", "pch"]
 
 RE_SUMMARY = re.compile(r"Compilation \((\d+) times\)")

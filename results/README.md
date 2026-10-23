@@ -1,7 +1,7 @@
 # Raw measurement results
 
-Medians of 5 clean builds per mode. Environment: Ubuntu 22.04 userver image
-(`--cpus=4 --memory=8g`), Clang 18.1.8, userver 3.3-rc, Release, target
+Medians of 5 clean builds per mode. Environment: prepared x86-64 Ubuntu 22.04
+container, 4 CPUs, 8 GiB RAM, Clang 18.1.8, userver 3.3-rc, Release, target
 `research` (10 translation units), `-ftime-trace`.
 
 | file | content |
@@ -27,4 +27,5 @@ Canonical summaries (medians):
 The canonical root `cba-report*.txt` files are single runs (not medians); use
 `comparison.md` for the aggregated numbers.
 
-Reproduce: `scripts/run_all.sh` (or `scripts/run_in_docker.sh`).
+Reproduce: `make measure` (or `REPS=5 scripts/run_all.sh`). Quick run:
+`make measure-quick` writes to `results-quick/` and leaves this directory intact.

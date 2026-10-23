@@ -1,4 +1,4 @@
-# NOTE: if this CI check breaks, just remove it, docker checks are enough anyway.
+# NOTE: if this CI check breaks, just remove it.
 
 name: CI
 

@@ -1,16 +1,15 @@
 # Куда уходит время сборки userver-сервиса
 
 Сервис `research` создан командой `userver-create-service --grpc --mongo --postgresql`, userver 3.3-rc.
-Все замеры воспроизводятся из этого репозитория одной командой — `scripts/run_all.sh` (внутри
-Docker-образа из задания) или `scripts/run_in_docker.sh` с хоста.
+Все замеры воспроизводятся из этого репозитория одной командой — `scripts/run_all.sh`
+в подготовленном контейнере. Короткий путь для проверяющего — в [REVIEWER.md](REVIEWER.md).
 
 ## Окружение и методика
 
-* Образ `ghcr.io/userver-framework/ubuntu-22.04-userver@sha256:fca9c8ac…f303`, лимиты
-  `--cpus=4 --cpuset-cpus=0-3 --memory=8g --memory-swap=8g`; Ubuntu 22.04.5, Clang 18.1.8,
-  CMake 4.4.4. Хост — Apple M1 Pro (10 ядер, 16 ГБ, macOS), поэтому x86-64 образ работает
-  через эмуляцию (VirtualApple). Абсолютные секунды поэтому условны, но baseline и эксперимент
-  сняты в одинаковых условиях, и сравнивать их между собой корректно.
+* Подготовленный контейнер: образ `ghcr.io/userver-framework/ubuntu-22.04-userver@sha256:fca9c8ac…f303`,
+  лимиты `--cpus=4 --cpuset-cpus=0-3 --memory=8g --memory-swap=8g`; Ubuntu 22.04.5, Clang 18.1.8,
+  CMake 4.4.4. Абсолютные секунды зависят от хоста и нагрузки, но baseline и эксперимент сняты
+  в одинаковых условиях, поэтому сравнивать их между собой корректно.
 * Каждый замер — чистая сборка: удаление build-каталога, configure Release с `-ftime-trace`,
   `ClangBuildAnalyzer --start`, `ninja -j4 research`, `--stop` и `--analyze`. По 5 повторов на
   режим, ниже медианы. Сырые отчёты: `results/<mode>/cba-report-N.txt`, сводка —
@@ -81,7 +80,7 @@ CPU при неизменном backend. Но wall-clock почти не изм�
 
 ## Ограничения и следующий шаг
 
-* Эмуляция x86-64 и шум хоста: разброс wall-clock между прогонами до ±2 с, поэтому −1.6% на грани
+* Шум хоста и контейнера: разброс wall-clock между прогонами до ±2 с, поэтому −1.6% на грани
   шума; метрики CBA (frontend/backend) стабильнее — разброс около 1 с.
 * Мерялся только таргет `research` (10 TU); юнит-тесты, бенчмарки и линковка тестовых бинарников
   не входят.
@@ -91,5 +90,6 @@ CPU при неизменном backend. Но wall-clock почти не изм�
   userver, split debug): она занимает 39.7% стены. Также можно уменьшать include-граф `main.cpp`,
   но это даст единицы секунд.
 
-Воспроизведение: `REPS=5 scripts/run_all.sh` — 5 чистых сборок baseline, 5 с PCH, сравнение и
-`results/summary.json`; `scripts/run_in_docker.sh` запускает то же в образе с лимитами задания.
+Воспроизведение: `make measure` (или `REPS=5 scripts/run_all.sh`) — 5 чистых сборок baseline,
+5 с PCH, сравнение и `results/summary.json`. Быстрый прогон: `make measure-quick` пишет в
+`results-quick/` и не перезаписывает канонические `results/`.
