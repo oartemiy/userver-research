@@ -64,11 +64,12 @@
 -- Setting up the venv at /root/code/research/build-pch/venv-utest
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-utest
+Activate with: source build-pch/venv-utest/bin/activate
 -- Installing requirements:
 --   /root/code/research/build-pch/requirements-userver-testsuite.txt
 Using Python 3.10.12 environment at: build-pch/venv-utest
-Resolved 28 packages in 380ms
-Prepared 28 packages in 15ms
+Resolved 28 packages in 354ms
+Prepared 28 packages in 18ms
 Installed 28 packages in 114ms
  + aiohappyeyeballs==2.7.1
  + aiohttp==3.14.5
@@ -105,12 +106,13 @@ Installed 28 packages in 114ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-chaotic
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-chaotic
+Activate with: source build-pch/venv-userver-chaotic/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/chaotic/requirements.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-chaotic
-Resolved 10 packages in 413ms
-Prepared 10 packages in 9ms
-Installed 10 packages in 53ms
+Resolved 10 packages in 400ms
+Prepared 10 packages in 14ms
+Installed 10 packages in 52ms
  + annotated-types==0.8.0
  + jinja2==3.1.6
  + markupsafe==3.0.4
@@ -147,10 +149,11 @@ Installed 10 packages in 53ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-grpc
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-grpc
+Activate with: source build-pch/venv-userver-grpc/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/grpc/requirements-4.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-grpc
-Resolved 3 packages in 324ms
+Resolved 3 packages in 297ms
 Prepared 3 packages in 12ms
 Installed 3 packages in 31ms
  + jinja2==3.1.6
@@ -175,13 +178,14 @@ Installed 3 packages in 31ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-sql
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-sql
+Activate with: source build-pch/venv-userver-sql/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/scripts/sql/requirements.txt
 --   /usr/lib/cmake/userver/scripts/sqldto/sqldto/generator/requirements.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-sql
-Resolved 8 packages in 350ms
+Resolved 8 packages in 343ms
 Prepared 8 packages in 15ms
-Installed 8 packages in 55ms
+Installed 8 packages in 63ms
  + annotated-types==0.8.0
  + jinja2==3.1.6
  + markupsafe==3.0.4
@@ -194,6 +198,7 @@ Installed 8 packages in 55ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-default-mongo-postgresql
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-default-mongo-postgresql
+Activate with: source build-pch/venv-userver-default-mongo-postgresql/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/testsuite/requirements.txt
 --   /usr/lib/cmake/userver/testsuite/requirements-grpc-4.txt
@@ -201,9 +206,9 @@ Creating virtual environment at: build-pch/venv-userver-default-mongo-postgresql
 --   /usr/lib/cmake/userver/testsuite/requirements-mongo.txt
 --   /usr/lib/cmake/userver/testsuite/requirements-postgres.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-default-mongo-postgresql
-Resolved 44 packages in 509ms
-Prepared 44 packages in 23ms
-Installed 44 packages in 140ms
+Resolved 44 packages in 501ms
+Prepared 44 packages in 17ms
+Installed 44 packages in 169ms
  + aiohappyeyeballs==2.7.1
  + aiohttp==3.14.5
  + aiosignal==1.4.0
@@ -250,11 +255,11 @@ Installed 44 packages in 140ms
  + zstd==1.5.7.2
 -- Configuring done (12.0s)
 -- Generating done (0.1s)
-CMake Warning (unused-cli):
+[33mCMake Warning (unused-cli):
   Manually-specified variables were not used by the project:
 
     USERVER_FEATURE_MONGODB
     USERVER_FEATURE_POSTGRESQL
 
-
+[0m
 -- Build files have been written to: /root/code/research/build-pch

@@ -16,11 +16,11 @@ warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
-[7/17] Building CXX object CMakeFiles/research_objs.dir/src/greeting.cpp.o
+[7/17] Building CXX object CMakeFiles/research_objs.dir/src/hello.cpp.o
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
-[8/17] Building CXX object CMakeFiles/research_objs.dir/src/hello.cpp.o
+[8/17] Building CXX object CMakeFiles/research_objs.dir/src/greeting.cpp.o
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
@@ -40,11 +40,11 @@ warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
-[13/17] Building CXX object CMakeFiles/research_proto.dir/proto/handlers/hello_client.usrv.pb.cpp.o
+[13/17] Building CXX object CMakeFiles/research_proto.dir/proto/handlers/hello_service.usrv.pb.cpp.o
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
-[14/17] Building CXX object CMakeFiles/research_proto.dir/proto/handlers/hello_service.usrv.pb.cpp.o
+[14/17] Building CXX object CMakeFiles/research_proto.dir/proto/handlers/hello_client.usrv.pb.cpp.o
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.

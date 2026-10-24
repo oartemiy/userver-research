@@ -64,12 +64,13 @@
 -- Setting up the venv at /root/code/research/build-baseline/venv-utest
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-baseline/venv-utest
+Activate with: source build-baseline/venv-utest/bin/activate
 -- Installing requirements:
 --   /root/code/research/build-baseline/requirements-userver-testsuite.txt
 Using Python 3.10.12 environment at: build-baseline/venv-utest
-Resolved 28 packages in 467ms
-Prepared 28 packages in 14ms
-Installed 28 packages in 110ms
+Resolved 28 packages in 495ms
+Prepared 28 packages in 21ms
+Installed 28 packages in 94ms
  + aiohappyeyeballs==2.7.1
  + aiohttp==3.14.5
  + aiosignal==1.4.0
@@ -105,12 +106,13 @@ Installed 28 packages in 110ms
 -- Setting up the venv at /root/code/research/build-baseline/venv-userver-chaotic
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-baseline/venv-userver-chaotic
+Activate with: source build-baseline/venv-userver-chaotic/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/chaotic/requirements.txt
 Using Python 3.10.12 environment at: build-baseline/venv-userver-chaotic
 Resolved 10 packages in 403ms
-Prepared 10 packages in 14ms
-Installed 10 packages in 51ms
+Prepared 10 packages in 12ms
+Installed 10 packages in 56ms
  + annotated-types==0.8.0
  + jinja2==3.1.6
  + markupsafe==3.0.4
@@ -147,10 +149,11 @@ Installed 10 packages in 51ms
 -- Setting up the venv at /root/code/research/build-baseline/venv-userver-grpc
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-baseline/venv-userver-grpc
+Activate with: source build-baseline/venv-userver-grpc/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/grpc/requirements-4.txt
 Using Python 3.10.12 environment at: build-baseline/venv-userver-grpc
-Resolved 3 packages in 377ms
+Resolved 3 packages in 316ms
 Prepared 3 packages in 12ms
 Installed 3 packages in 32ms
  + jinja2==3.1.6
@@ -175,13 +178,14 @@ Installed 3 packages in 32ms
 -- Setting up the venv at /root/code/research/build-baseline/venv-userver-sql
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-baseline/venv-userver-sql
+Activate with: source build-baseline/venv-userver-sql/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/scripts/sql/requirements.txt
 --   /usr/lib/cmake/userver/scripts/sqldto/sqldto/generator/requirements.txt
 Using Python 3.10.12 environment at: build-baseline/venv-userver-sql
-Resolved 8 packages in 345ms
-Prepared 8 packages in 8ms
-Installed 8 packages in 52ms
+Resolved 8 packages in 357ms
+Prepared 8 packages in 20ms
+Installed 8 packages in 82ms
  + annotated-types==0.8.0
  + jinja2==3.1.6
  + markupsafe==3.0.4
@@ -194,6 +198,7 @@ Installed 8 packages in 52ms
 -- Setting up the venv at /root/code/research/build-baseline/venv-userver-default-mongo-postgresql
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-baseline/venv-userver-default-mongo-postgresql
+Activate with: source build-baseline/venv-userver-default-mongo-postgresql/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/testsuite/requirements.txt
 --   /usr/lib/cmake/userver/testsuite/requirements-grpc-4.txt
@@ -201,9 +206,9 @@ Creating virtual environment at: build-baseline/venv-userver-default-mongo-postg
 --   /usr/lib/cmake/userver/testsuite/requirements-mongo.txt
 --   /usr/lib/cmake/userver/testsuite/requirements-postgres.txt
 Using Python 3.10.12 environment at: build-baseline/venv-userver-default-mongo-postgresql
-Resolved 44 packages in 476ms
-Prepared 44 packages in 22ms
-Installed 44 packages in 144ms
+Resolved 44 packages in 559ms
+Prepared 44 packages in 25ms
+Installed 44 packages in 111ms
  + aiohappyeyeballs==2.7.1
  + aiohttp==3.14.5
  + aiosignal==1.4.0
@@ -248,13 +253,13 @@ Installed 44 packages in 144ms
  + yandex-taxi-testsuite==0.4.11
  + yarl==1.25.1
  + zstd==1.5.7.2
--- Configuring done (12.0s)
+-- Configuring done (12.4s)
 -- Generating done (0.1s)
-CMake Warning (unused-cli):
+[33mCMake Warning (unused-cli):
   Manually-specified variables were not used by the project:
 
     USERVER_FEATURE_MONGODB
     USERVER_FEATURE_POSTGRESQL
 
-
+[0m
 -- Build files have been written to: /root/code/research/build-baseline

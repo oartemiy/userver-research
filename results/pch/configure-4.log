@@ -64,12 +64,13 @@
 -- Setting up the venv at /root/code/research/build-pch/venv-utest
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-utest
+Activate with: source build-pch/venv-utest/bin/activate
 -- Installing requirements:
 --   /root/code/research/build-pch/requirements-userver-testsuite.txt
 Using Python 3.10.12 environment at: build-pch/venv-utest
-Resolved 28 packages in 599ms
+Resolved 28 packages in 400ms
 Prepared 28 packages in 15ms
-Installed 28 packages in 130ms
+Installed 28 packages in 108ms
  + aiohappyeyeballs==2.7.1
  + aiohttp==3.14.5
  + aiosignal==1.4.0
@@ -105,12 +106,13 @@ Installed 28 packages in 130ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-chaotic
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-chaotic
+Activate with: source build-pch/venv-userver-chaotic/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/chaotic/requirements.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-chaotic
-Resolved 10 packages in 399ms
+Resolved 10 packages in 402ms
 Prepared 10 packages in 15ms
-Installed 10 packages in 54ms
+Installed 10 packages in 56ms
  + annotated-types==0.8.0
  + jinja2==3.1.6
  + markupsafe==3.0.4
@@ -147,12 +149,13 @@ Installed 10 packages in 54ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-grpc
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-grpc
+Activate with: source build-pch/venv-userver-grpc/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/grpc/requirements-4.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-grpc
-Resolved 3 packages in 345ms
-Prepared 3 packages in 15ms
-Installed 3 packages in 38ms
+Resolved 3 packages in 318ms
+Prepared 3 packages in 12ms
+Installed 3 packages in 32ms
  + jinja2==3.1.6
  + markupsafe==3.0.4
  + protobuf==4.25.9
@@ -175,12 +178,13 @@ Installed 3 packages in 38ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-sql
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-sql
+Activate with: source build-pch/venv-userver-sql/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/scripts/sql/requirements.txt
 --   /usr/lib/cmake/userver/scripts/sqldto/sqldto/generator/requirements.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-sql
-Resolved 8 packages in 356ms
-Prepared 8 packages in 16ms
+Resolved 8 packages in 343ms
+Prepared 8 packages in 9ms
 Installed 8 packages in 52ms
  + annotated-types==0.8.0
  + jinja2==3.1.6
@@ -194,6 +198,7 @@ Installed 8 packages in 52ms
 -- Setting up the venv at /root/code/research/build-pch/venv-userver-default-mongo-postgresql
 Using CPython 3.10.12 interpreter at: /usr/bin/python3
 Creating virtual environment at: build-pch/venv-userver-default-mongo-postgresql
+Activate with: source build-pch/venv-userver-default-mongo-postgresql/bin/activate
 -- Installing requirements:
 --   /usr/lib/cmake/userver/testsuite/requirements.txt
 --   /usr/lib/cmake/userver/testsuite/requirements-grpc-4.txt
@@ -201,9 +206,9 @@ Creating virtual environment at: build-pch/venv-userver-default-mongo-postgresql
 --   /usr/lib/cmake/userver/testsuite/requirements-mongo.txt
 --   /usr/lib/cmake/userver/testsuite/requirements-postgres.txt
 Using Python 3.10.12 environment at: build-pch/venv-userver-default-mongo-postgresql
-Resolved 44 packages in 503ms
-Prepared 44 packages in 20ms
-Installed 44 packages in 129ms
+Resolved 44 packages in 827ms
+Prepared 44 packages in 23ms
+Installed 44 packages in 114ms
  + aiohappyeyeballs==2.7.1
  + aiohttp==3.14.5
  + aiosignal==1.4.0
@@ -248,13 +253,13 @@ Installed 44 packages in 129ms
  + yandex-taxi-testsuite==0.4.11
  + yarl==1.25.1
  + zstd==1.5.7.2
--- Configuring done (13.2s)
+-- Configuring done (12.5s)
 -- Generating done (0.1s)
-CMake Warning (unused-cli):
+[33mCMake Warning (unused-cli):
   Manually-specified variables were not used by the project:
 
     USERVER_FEATURE_MONGODB
     USERVER_FEATURE_POSTGRESQL
 
-
+[0m
 -- Build files have been written to: /root/code/research/build-pch

@@ -97,10 +97,6 @@ results-quick:
 	@cat results-quick/comparison.md
 cba:
 	@printf '%s\n' '=== baseline ===' && head -n 8 cba-report.txt && printf '%s\n' '=== PCH ===' && head -n 8 cba-report-pch.txt
-report:
-	@cat REPORT.md
-review:
-	@cat REVIEWER.md
 clean-quick:
 	rm -rf results-quick
 clean-results:

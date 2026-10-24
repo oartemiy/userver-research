@@ -4,11 +4,11 @@
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
-[4/14] Building CXX object CMakeFiles/research_objs.dir/src/hello.cpp.o
+[4/14] Building CXX object CMakeFiles/research_objs.dir/src/hello_mongo.cpp.o
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.
-[5/14] Building CXX object CMakeFiles/research_objs.dir/src/hello_mongo.cpp.o
+[5/14] Building CXX object CMakeFiles/research_objs.dir/src/hello.cpp.o
 warning: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-useless-cast' [-Wunknown-warning-option]
 2 warnings generated.

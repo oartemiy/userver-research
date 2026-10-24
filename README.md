@@ -73,8 +73,6 @@ make measure               # 5 clean builds per mode
 make results               # print results/comparison.md
 make results-quick         # print results-quick/comparison.md
 make cba                   # print CBA time summaries
-make review                # print REVIEWER.md
-make report                # print REPORT.md
 ```
 
 `make measure*` uses the scripts from this repository and installs

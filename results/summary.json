@@ -2,186 +2,186 @@
   "baseline": {
     "runs": 5,
     "compilations": 10,
-    "frontend_s": 37.9,
-    "backend_s": 16.4,
-    "cpu_total_s": 54.3,
-    "wall_s": 29.94,
+    "frontend_s": 38.2,
+    "backend_s": 16.2,
+    "cpu_total_s": 54.400000000000006,
+    "wall_s": 30.2,
     "walls_s": [
-      30.12,
-      30.13,
-      29.94,
-      29.88,
-      29.49
+      30.78,
+      30.2,
+      30.57,
+      29.9,
+      30.18
     ],
     "phases_median_ms": {
-      "proto_gen_end_ms": 838.0,
-      "compile_end_ms": 18063.0,
-      "link_ms": 11876.0,
-      "total_ms": 29799.0
+      "proto_gen_end_ms": 802.0,
+      "compile_end_ms": 17979.0,
+      "link_ms": 12176.0,
+      "total_ms": 30055.0
     },
     "tu_median_ms": {
-      "proto/handlers/hello_service.usrv.pb.cpp": {
-        "frontend": 5076.19,
-        "backend": 2809.915,
-        "runs": 5
-      },
-      "src/hello_mongo.cpp": {
-        "frontend": 3132.013,
-        "backend": 935.175,
-        "runs": 5
-      },
-      "src/main.cpp": {
-        "frontend": 6562.23,
-        "backend": 1757.486,
+      "proto/handlers/hello.grpc.pb.cc": {
+        "frontend": 3389.936,
+        "backend": 2406.608,
         "runs": 5
       },
       "src/hello_postgres.cpp": {
-        "frontend": 4139.159,
-        "backend": 1364.705,
-        "runs": 5
-      },
-      "src/hello.cpp": {
-        "frontend": 2657.036,
-        "backend": 789.253,
+        "frontend": 4621.531,
+        "backend": 1381.961,
         "runs": 5
       },
       "proto/handlers/hello.pb.cc": {
-        "frontend": 2210.833,
-        "backend": 1083.925,
+        "frontend": 2195.908,
+        "backend": 1086.685,
         "runs": 5
       },
-      "proto/handlers/hello_client.usrv.pb.cpp": {
-        "frontend": 5110.209,
-        "backend": 3172.136,
+      "src/hello_mongo.cpp": {
+        "frontend": 3099.939,
+        "backend": 935.158,
         "runs": 5
       },
       "src/hello_grpc.cpp": {
-        "frontend": 3789.845,
-        "backend": 1264.731,
-        "runs": 5
-      },
-      "proto/handlers/hello.grpc.pb.cc": {
-        "frontend": 3687.508,
-        "backend": 2415.223,
+        "frontend": 3842.358,
+        "backend": 1248.475,
         "runs": 5
       },
       "src/greeting.cpp": {
-        "frontend": 1592.438,
-        "backend": 754.395,
+        "frontend": 1704.13,
+        "backend": 767.961,
+        "runs": 5
+      },
+      "src/main.cpp": {
+        "frontend": 6653.037,
+        "backend": 1715.87,
+        "runs": 5
+      },
+      "proto/handlers/hello_client.usrv.pb.cpp": {
+        "frontend": 4993.763,
+        "backend": 3129.591,
+        "runs": 5
+      },
+      "proto/handlers/hello_service.usrv.pb.cpp": {
+        "frontend": 5033.52,
+        "backend": 2794.451,
+        "runs": 5
+      },
+      "src/hello.cpp": {
+        "frontend": 2655.493,
+        "backend": 780.835,
         "runs": 5
       }
     },
     "headers_median_ms": {
-      "userver/clients/dns/component.hpp": 2174,
-      "src/hello_grpc.hpp": 4354,
-      "userver/components/component.hpp": 5226,
-      "proto/handlers/hello.pb.h": 4234,
-      "proto/handlers/hello_service.usrv.pb.hpp": 6040,
-      "proto/handlers/hello_client.usrv.pb.hpp": 3520,
-      "src/hello_mongo.hpp": 2791,
-      "src/hello.hpp": 2431,
-      "fmt/format.h": 1625,
-      "src/hello_postgres.hpp": 4385
+      "src/hello_mongo.hpp": 2765,
+      "proto/handlers/hello.pb.h": 3905,
+      "fmt/format.h": 1774,
+      "userver/components/component.hpp": 5918,
+      "src/hello_postgres.hpp": 4865,
+      "src/hello.hpp": 2430,
+      "src/hello_grpc.hpp": 4375,
+      "proto/handlers/hello_client.usrv.pb.hpp": 3508,
+      "proto/handlers/hello_service.usrv.pb.hpp": 5947,
+      "userver/clients/dns/component.hpp": 2180
     }
   },
   "pch": {
     "runs": 5,
     "compilations": 13,
-    "frontend_s": 27.5,
+    "frontend_s": 27.1,
     "backend_s": 16.3,
-    "cpu_total_s": 43.8,
-    "wall_s": 29.46,
+    "cpu_total_s": 43.400000000000006,
+    "wall_s": 29.01,
     "walls_s": [
-      29.0,
-      28.78,
-      29.46,
-      31.59,
-      29.69
+      29.01,
+      29.58,
+      28.86,
+      29.01,
+      29.89
     ],
     "phases_median_ms": {
-      "proto_gen_end_ms": 825.0,
-      "compile_end_ms": 17449.0,
-      "link_ms": 11873.0,
-      "total_ms": 29322.0
+      "proto_gen_end_ms": 844.0,
+      "compile_end_ms": 17156.0,
+      "link_ms": 12068.0,
+      "total_ms": 28875.0
     },
     "tu_median_ms": {
-      "proto/handlers/hello_service.usrv.pb.cpp": {
-        "frontend": 3181.03,
-        "backend": 2837.855,
-        "runs": 5
-      },
-      "src/hello_mongo.cpp": {
-        "frontend": 530.515,
-        "backend": 935.783,
-        "runs": 5
-      },
-      "src/main.cpp": {
-        "frontend": 4037.488,
-        "backend": 1752.085,
-        "runs": 5
-      },
-      "cmake_pch.hxx [research]": {
-        "frontend": 3124.843,
-        "backend": 0.0,
+      "proto/handlers/hello.grpc.pb.cc": {
+        "frontend": 1527.289,
+        "backend": 2312.586,
         "runs": 5
       },
       "cmake_pch.hxx [research_objs]": {
-        "frontend": 3109.519,
+        "frontend": 3071.781,
         "backend": 0.0,
         "runs": 5
       },
       "src/hello_postgres.cpp": {
-        "frontend": 2215.761,
-        "backend": 1347.114,
-        "runs": 5
-      },
-      "src/hello.cpp": {
-        "frontend": 324.21,
-        "backend": 860.031,
+        "frontend": 2133.864,
+        "backend": 1344.355,
         "runs": 5
       },
       "proto/handlers/hello.pb.cc": {
-        "frontend": 687.606,
-        "backend": 1097.513,
+        "frontend": 673.269,
+        "backend": 1073.681,
         "runs": 5
       },
-      "proto/handlers/hello_client.usrv.pb.cpp": {
-        "frontend": 3266.463,
-        "backend": 3142.536,
+      "src/hello_mongo.cpp": {
+        "frontend": 523.927,
+        "backend": 930.12,
         "runs": 5
       },
       "src/hello_grpc.cpp": {
-        "frontend": 2443.782,
-        "backend": 1256.319,
-        "runs": 5
-      },
-      "proto/handlers/hello.grpc.pb.cc": {
-        "frontend": 1570.426,
-        "backend": 2394.384,
-        "runs": 5
-      },
-      "cmake_pch.hxx [research_proto]": {
-        "frontend": 2527.265,
-        "backend": 0.0,
+        "frontend": 2389.808,
+        "backend": 1266.846,
         "runs": 5
       },
       "src/greeting.cpp": {
-        "frontend": 401.022,
-        "backend": 842.713,
+        "frontend": 381.906,
+        "backend": 913.499,
+        "runs": 5
+      },
+      "src/main.cpp": {
+        "frontend": 3965.351,
+        "backend": 1676.519,
+        "runs": 5
+      },
+      "proto/handlers/hello_client.usrv.pb.cpp": {
+        "frontend": 3406.535,
+        "backend": 3090.281,
+        "runs": 5
+      },
+      "proto/handlers/hello_service.usrv.pb.cpp": {
+        "frontend": 3081.898,
+        "backend": 2651.619,
+        "runs": 5
+      },
+      "cmake_pch.hxx [research_proto]": {
+        "frontend": 2607.232,
+        "backend": 0.0,
+        "runs": 5
+      },
+      "src/hello.cpp": {
+        "frontend": 314.254,
+        "backend": 820.171,
+        "runs": 5
+      },
+      "cmake_pch.hxx [research]": {
+        "frontend": 3084.728,
+        "backend": 0.0,
         "runs": 5
       }
     },
     "headers_median_ms": {
-      "CMakeFiles/research_proto.dir/cmake_pch.hxx": 2276,
-      "src/hello_grpc.hpp": 3491,
-      "proto/handlers/hello.pb.h": 560,
-      "userver/ugrpc/server/impl/codegen_definitions.hpp": 507,
-      "CMakeFiles/research.dir/cmake_pch.hxx": 2962,
-      "proto/handlers/hello_service.usrv.pb.hpp": 5253,
-      "proto/handlers/hello_client.usrv.pb.hpp": 1864,
-      "proto/handlers/hello.grpc.pb.h": 694,
-      "CMakeFiles/research_objs.dir/cmake_pch.hxx": 2947,
-      "src/hello_postgres.hpp": 2617
+      "proto/handlers/hello.pb.h": 551,
+      "CMakeFiles/research.dir/cmake_pch.hxx": 2929,
+      "src/hello_postgres.hpp": 2565,
+      "userver/ugrpc/server/impl/codegen_definitions.hpp": 512,
+      "proto/handlers/hello.grpc.pb.h": 618,
+      "src/hello_grpc.hpp": 3508,
+      "proto/handlers/hello_client.usrv.pb.hpp": 2022,
+      "CMakeFiles/research_proto.dir/cmake_pch.hxx": 2365,
+      "proto/handlers/hello_service.usrv.pb.hpp": 5204,
+      "CMakeFiles/research_objs.dir/cmake_pch.hxx": 2912
     }
   }
 }
