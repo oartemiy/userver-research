@@ -76,8 +76,7 @@ help:
 		'  make results               print results/comparison.md' \
 		'  make results-quick         print results-quick/comparison.md' \
 		'  make cba                   print CBA time summaries' \
-		'  make review                print REVIEWER.md' \
-		'  make report                print REPORT.md'
+		'  make review                print REVIEWER.md' 
 
 build: build-release
 test: test-fast

@@ -32,7 +32,7 @@ can also be `debug-custom`, `release-custom`.
 
 The repo contains a reproducible experiment that measures where the build time
 of this service goes and checks one optimization hypothesis (precompiled
-headers). See [REPORT.md](REPORT.md) for the results.
+headers). See [report.pdf](report.pfd) for the results.
 
 ### Quick start (inside the prepared container)
 
@@ -113,15 +113,11 @@ head -n 8 cba-report.txt      # canonical full CBA output, baseline
 head -n 8 cba-report-pch.txt  # canonical full CBA output, PCH
 ```
 
-The canonical root `cba-report*.txt` files are single runs; all numbers in
-`REPORT.md` are medians of five clean builds.
-
 The PCH hypothesis is enabled by `-DRESEARCH_USE_PCH=ON`; the precompiled
 header sets are `src/pch_userver.hpp` and `src/pch_proto.hpp`.
 
 Absolute times depend on the host and its current load. Baseline and PCH are
 measured under the same conditions, so the relative deltas remain comparable
-(see REPORT.md).
 
 
 ## License

@@ -11,7 +11,6 @@
    по профилированию сборки не нужен.
 3. `make results` — медианы из `results/comparison.md`.
 4. `make cba` — краткая выжимка `cba-report.txt` и `cba-report-pch.txt`.
-5. `make report` — текст `REPORT.md`.
 
 Одной командой: `make verify` — тесты + быстрый замер в `results-quick/`.
 
@@ -28,7 +27,6 @@
 
 ## Что смотреть
 
-* `REPORT.md` — выводы, гипотеза, ограничения.
 * `results/comparison.md` — медианы frontend/backend/CPU/wall/link.
 * `results/summary.json` — те же числа машинно-читаемо.
 * `cba-report.txt`, `cba-report-pch.txt` — полные CBA-отчёты канонических
@@ -44,5 +42,3 @@
 | CPU, с | 54.3 | 43.8 | −19.3% |
 | wall-clock, с | 29.9 | 29.5 | −1.6% |
 | линковка, с | 11.88 | 11.87 | 0% |
-
-Подробности и оговорки — в `REPORT.md`.
