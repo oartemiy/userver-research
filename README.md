@@ -32,7 +32,7 @@ can also be `debug-custom`, `release-custom`.
 
 The repo contains a reproducible experiment that measures where the build time
 of this service goes and checks one optimization hypothesis (precompiled
-headers). See [report.pdf](report.pfd) for the results.
+headers). See [report.pdf](report.pdf) for the results.
 
 ### Quick start (inside the prepared container)
 
