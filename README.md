@@ -16,7 +16,7 @@
 
 ## Воспроизведение замеров
 
-* `.scripts/bootstrap_cba.sh` — локальная установка ClangBuildAnalizer
+* `.scripts/bootstrap_cba.sh` — локальная установка ClangBuildAnalyzer
 * `.scripts/setup_env.sh` — установка CXX=clang++-18
 * `make measure-quick` — 1 чистая сборка baseline и 1 PCH, пишет в
   `results-quick/`, канонический `results/` не трогает.
